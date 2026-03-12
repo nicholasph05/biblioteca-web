@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+}
+
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.navbar {
+  background-color: #1f2937;
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.user-badge {
+  background-color: rgba(255, 255, 255, 0.12);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.logout-button {
+  background-color: #dc2626;
+}
+
+.form-card,
+.list-card,
+.home-card {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+}
+
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #2563eb;
+  color: white;
+}
+
+button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.secondary-button {
+  background-color: #6b7280;
+}
+
+.delete-button {
+  background-color: #dc2626;
+}
+
+.autor-list {
+  list-style: none;
+  padding: 0;
+}
+
+.autor-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.autor-item p {
+  margin: 4px 0;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.error {
+  color: red;
+  margin-top: 12px;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+}
+
+.search-card {
+  margin-top: 20px;
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-row input {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.field-error {
+  color: #dc2626;
+  font-size: 14px;
+  margin-top: -6px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.report-block {
+  margin-bottom: 20px;
+}
