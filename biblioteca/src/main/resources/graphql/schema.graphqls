@@ -1,0 +1,126 @@
+type Query {
+  autores: [Autor!]!
+  autorPorCedula(cedula: String!): Autor
+  libros: [Libro!]!
+  libroPorIsbn(isbn: String!): Libro
+  usuarios: [Usuario!]!
+  usuarioPorId(id: ID!): Usuario
+  reporteAutorPorCedula(cedula: String!): ReporteAutor
+  resumenBiblioteca: ResumenBiblioteca!
+}
+
+type Mutation {
+  login(input: LoginInput!): AuthPayload!
+
+  crearAutor(input: AutorInput!): Autor!
+  actualizarAutor(cedula: String!, input: AutorUpdateInput!): Autor!
+  eliminarAutor(cedula: String!): Boolean!
+
+  crearLibro(input: LibroInput!): Libro!
+  actualizarLibro(isbn: String!, input: LibroUpdateInput!): Libro!
+  eliminarLibro(isbn: String!): Boolean!
+
+  crearUsuario(input: UsuarioInput!): Usuario!
+  actualizarUsuario(id: ID!, input: UsuarioUpdateInput!): Usuario!
+  eliminarUsuario(id: ID!): Boolean!
+}
+
+type Autor {
+  cedula: String!
+  nombreCompleto: String!
+  nacionalidad: String!
+  libros: [Libro!]!
+}
+
+type Libro {
+  isbn: String!
+  titulo: String!
+  editorial: String!
+  genero: String!
+  anioPublicacion: Int!
+  autor: Autor!
+}
+
+type Usuario {
+  id: ID!
+  userName: String!
+  tipo: String!
+}
+
+type ReporteAutor {
+  cedula: String!
+  nombreCompleto: String!
+  nacionalidad: String!
+  libros: [LibroReporte!]!
+}
+
+type LibroReporte {
+  isbn: String!
+  titulo: String!
+}
+
+type AuthPayload {
+  id: ID!
+  userName: String!
+  tipo: String!
+  token: String!
+  mensaje: String
+}
+
+type ResumenBiblioteca {
+  totalAutores: Int!
+  totalLibros: Int!
+  totalUsuarios: Int!
+  totalAdministradores: Int!
+  totalEmpleados: Int!
+}
+
+enum TipoUsuario {
+  ADMINISTRADOR
+  EMPLEADO
+}
+
+input LoginInput {
+  userName: String!
+  password: String!
+}
+
+input AutorInput {
+  cedula: String!
+  nombreCompleto: String!
+  nacionalidad: String!
+}
+
+input AutorUpdateInput {
+  nombreCompleto: String!
+  nacionalidad: String!
+}
+
+input LibroInput {
+  isbn: String!
+  titulo: String!
+  editorial: String!
+  genero: String!
+  anioPublicacion: Int!
+  autorCedula: String!
+}
+
+input LibroUpdateInput {
+  titulo: String!
+  editorial: String!
+  genero: String!
+  anioPublicacion: Int!
+  autorCedula: String!
+}
+
+input UsuarioInput {
+  userName: String!
+  password: String!
+  tipo: String!
+}
+
+input UsuarioUpdateInput {
+  userName: String!
+  password: String
+  tipo: String!
+}
